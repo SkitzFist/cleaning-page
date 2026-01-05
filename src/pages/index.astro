@@ -2,15 +2,70 @@
 
 ---
 
-<html lang="en">
+<html lang="sv">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>Städfirma Sverige</title>
 	</head>
 	<body>
-		<h1>Astro</h1>
+		<header>
+			<h1>Välkommen till Städfirma Sverige</h1>
+		</header>
+		<main>
+			<section>
+				<h2>Om oss</h2>
+				<p>Vi är ett professionellt städföretag som erbjuder högkvalitativa tjänster för hem och kontor i Sverige. Med över 10 års erfarenhet garanterar vi ett rent och hälsosamt miljö.</p>
+			</section>
+			<section>
+				<h2>Våra tjänster</h2>
+				<ul>
+					<li>Hemstädning</li>
+					<li>Kontorsstädning</li>
+					<li>Fönsterputsning</li>
+					<li>Djupstädning</li>
+				</ul>
+			</section>
+			<section>
+				<h2>Certifikat</h2>
+				<ul>
+					<li>ISO 9001 Kvalitetshantering</li>
+					<li>Miljöcertifiering</li>
+					<li>Säkerhetsutbildning för personal</li>
+				</ul>
+			</section>
+		</main>
+		<footer>
+			<p>Kontakta oss via vår <a href="/contact">kontaktformulär</a>.</p>
+		</footer>
 	</body>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			max-width: 800px;
+			margin: 0 auto;
+			padding: 20px;
+		}
+		header h1 {
+			color: #2c3e50;
+		}
+		section {
+			margin-bottom: 2rem;
+		}
+		ul {
+			list-style-type: disc;
+			padding-left: 20px;
+		}
+		footer {
+			margin-top: 2rem;
+			text-align: center;
+		}
+		@media (max-width: 600px) {
+			body {
+				padding: 10px;
+			}
+		}
+	</style>
 </html>
