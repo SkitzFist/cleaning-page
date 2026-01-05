@@ -4,8 +4,9 @@
 - [x] Design and implement the landing page (index.astro) with company information and certificates display in Swedish
 - [x] Create the contact page with a form for user requests
 - [x] Configure the contact form to integrate with Netlify forms for form handling
-- [ ] Set up email notifications for form submissions in Netlify dashboard
-- [ ] Research and implement SMS notification option (if email is not sufficient)
-- [x] Add responsive styling and ensure the site works well on mobile devices
-- [x] Test the build process and deploy to Netlify
-- [ ] Verify form submission works and notifications are sent
+- [x] Add modern, stylish, and minimal CSS styling for the entire site
+- [x] Add a prominent "Beställ" CTA button linking to the contact form
+- [x] Test the build process and deploy to Netlify (user has deployed via GitHub integration)
+- [ ] Set up email notifications for form submissions in Netlify dashboard (manual step)
+- [ ] Verify form submission works and notifications are sent (after email setup)
+- [x] Cancelled: SMS notification (not needed, email sufficient)
