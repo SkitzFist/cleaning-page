@@ -1,43 +1,92 @@
-# Astro Starter Kit: Minimal
+# Städfirma Sverige
 
-```sh
-npm create astro@latest -- --template minimal
+A modern, responsive website for a Swedish cleaning company, built with Astro and deployed on Netlify.
+
+## Description
+
+This website provides information about cleaning services and allows customers to contact the company through a simple contact form. The form submissions are handled via Netlify Forms for easy management.
+
+## Features
+
+- Responsive design
+- Contact form with Netlify Forms integration
+- Swedish language content
+- Clean, professional layout
+
+## Tech Stack
+
+- **Framework**: Astro
+- **Deployment**: Netlify
+- **Forms**: Netlify Forms
+- **Styling**: CSS
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (version 18 or higher)
+- npm
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   cd cleaning-page
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+### Development
+
+Start the development server:
+```bash
+npm run dev
+```
+Open [http://localhost:4321](http://localhost:4321) in your browser.
+
+### Build
+
+Build for production:
+```bash
+npm run build
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Preview the production build:
+```bash
+npm run preview
+```
 
-## 🚀 Project Structure
+### Deployment
 
-Inside of your Astro project, you'll see the following folders and files:
+The site is configured for deployment on Netlify. Push your changes to the main branch to trigger automatic deployments.
 
-```text
+## Project Structure
+
+```
 /
 ├── public/
+│   └── favicon.svg
 ├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+│   ├── components/
+│   ├── layouts/
+│   ├── pages/
+│   │   ├── index.astro
+│   │   └── contact.astro
+│   └── styles/
+│       └── global.css
+├── package.json
+├── astro.config.mjs
+└── tsconfig.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Contact
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+For inquiries about the cleaning services, please use the contact form on the website or reach out directly.
 
-Any static assets, like images, can be placed in the `public/` directory.
+## Contributing
 
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Follow the guidelines in `AGENTS.md` for coding standards and best practices.

@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import Nav from '../components/Nav.astro';
 ---
 <html lang="sv">
 	<head>
@@ -7,11 +8,12 @@ import '../styles/global.css';
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Kontakt - Städfirma Sverige</title>
+		<title>Beställ - Städfirma Sverige</title>
 	</head>
 	<body>
 		<header>
-			<h1>Kontakta oss</h1>
+			<h1>Beställ</h1>
+			<Nav />
 		</header>
 		<main>
 			<form name="contact" method="POST" data-netlify="true">
@@ -30,8 +32,6 @@ import '../styles/global.css';
 				<button type="submit">Skicka</button>
 			</form>
 		</main>
-		<footer>
-			<a href="/">Tillbaka till startsidan</a>
-		</footer>
+
 	</body>
 </html>
