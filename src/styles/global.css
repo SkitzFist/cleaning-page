@@ -1,13 +1,13 @@
 /* Global styles for Cleaning Company Website */
 :root {
-  --primary-color: #3b82f6;
-  --primary-gradient: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
-  --secondary-color: #64748b;
-  --background-color: #f8fafc;
-  --background-gradient: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
-  --text-color: #0f172a;
-  --muted-text: #64748b;
-  --border-color: #e2e8f0;
+  --primary-color: #dc2626;
+  --primary-gradient: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+  --secondary-color: #7f1d1d;
+  --background-color: #f5f5f5;
+  --background-gradient: linear-gradient(135deg, #f5f5f5 0%, #e5e5e5 100%);
+  --text-color: #000000;
+  --muted-text: #991b1b;
+  --border-color: #cccccc;
   --card-bg: #ffffff;
   --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
@@ -65,7 +65,7 @@ header::after {
 
 header h1 {
   margin: 0;
-  font-size: 3rem;
+  font-size: 7.8rem;
   font-weight: 800;
   background: var(--primary-gradient);
   -webkit-background-clip: text;
@@ -335,7 +335,7 @@ button:focus {
 /* Responsive design */
 @media (max-width: 768px) {
   header h1 {
-    font-size: 2rem;
+    font-size: 3rem;
   }
 
   main {
@@ -353,11 +353,16 @@ button:focus {
 
 @media (max-width: 480px) {
   header {
-    padding: 1.5rem 1rem;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 1rem;
+    min-height: 250px;
   }
 
   header h1 {
-    font-size: 1.75rem;
+    font-size: 3rem;
+    padding: 1.5rem;
   }
 
   section h2 {
