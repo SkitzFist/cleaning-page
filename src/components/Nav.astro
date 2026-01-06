@@ -1,11 +1,11 @@
 ---
-// Nav.astro
+const currentPath = Astro.url.pathname;
 ---
 
 <nav class="nav">
   <ul>
-    <li><a href="/">Hem</a></li>
-    <li><a href="/contact">Beställ</a></li>
+    <li><a href="/" class={currentPath === '/' ? 'active' : ''}>Hem</a></li>
+    <li><a href="/contact" class={currentPath === '/contact' ? 'active' : ''}>Beställ</a></li>
   </ul>
 </nav>
 
