@@ -33,7 +33,9 @@ body {
 header {
   background: transparent;
   padding: 6rem 1rem 0;
-  text-align: center;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
   position: relative;
   overflow: hidden;
   min-height: 300px;
@@ -245,6 +247,17 @@ form {
   border-top: 4px solid var(--border-color);
 }
 
+.radio-group {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.radio-group input[type="radio"] {
+  margin-right: 0.5rem;
+}
+
 form::before {
   content: '';
   position: absolute;
@@ -355,6 +368,12 @@ button:focus {
 
   form {
     padding: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  header h1 {
+    font-size: 6.5rem;
   }
 }
 

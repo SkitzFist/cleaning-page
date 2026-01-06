@@ -20,14 +20,42 @@ import Nav from '../components/Nav.astro';
 				<label for="name">Namn:</label>
 				<input type="text" id="name" name="name" required />
 
-				<label for="email">E-post:</label>
-				<input type="email" id="email" name="email" required />
+				<label>Typ av kund:</label>
+				<div class="radio-group">
+					<input type="radio" id="private" name="customer_type" value="privat" checked />
+					<label for="private">Privat person</label>
+					<input type="radio" id="business" name="customer_type" value="företag" />
+					<label for="business">Företag</label>
+				</div>
 
-				<label for="phone">Telefon:</label>
-				<input type="tel" id="phone" name="phone" />
+				<label for="phone">Telefonnummer:</label>
+				<input type="tel" id="phone" name="phone" required />
 
-				<label for="message">Meddelande:</label>
-				<textarea id="message" name="message" required></textarea>
+				<label for="service_type">Typ av tjänst:</label>
+				<select id="service_type" name="service_type" required>
+					<option value="">Välj tjänst</option>
+					<option value="hem">Hem</option>
+					<option value="flytt">Flytt</option>
+					<option value="dödsbo">Dödsbo</option>
+					<option value="bygg">Bygg</option>
+					<option value="storstäd">Storstäd</option>
+					<option value="fönsterputs">Fönsterputs</option>
+					<option value="kontor">Kontor</option>
+					<option value="trapphus">Trapphus</option>
+					<option value="övrigt">Övrigt</option>
+				</select>
+
+				<label for="rooms">Antal rum:</label>
+				<input type="number" id="rooms" name="rooms" min="1" />
+
+				<label for="kvm">Kvm:</label>
+				<input type="number" id="kvm" name="kvm" min="1" />
+
+				<label for="frequency">Frekvens:</label>
+				<input type="text" id="frequency" name="frequency" />
+
+				<label for="info">Övrig info:</label>
+				<textarea id="info" name="info"></textarea>
 
 				<button type="submit">Skicka</button>
 			</form>
