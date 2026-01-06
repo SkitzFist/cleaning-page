@@ -59,7 +59,34 @@ import Nav from '../components/Nav.astro';
 
 				<button type="submit">Skicka</button>
 			</form>
+			<div id="success-message" style="display: none; margin-top: 2rem; padding: 1rem; background: var(--card-bg); border-radius: 1rem; box-shadow: var(--shadow); text-align: center;">
+				<p>Tack för din beställning! Vi hör av oss inom en arbetsdag. Vid frågor var god att maila till <a href="mailto:kontakt@tjelvarstadservice.se">kontakt@tjelvarstadservice.se</a></p>
+			</div>
 		</main>
+		<script>
+			document.querySelector('form')?.addEventListener('submit', async (e) => {
+				e.preventDefault();
+				const form = e.target as HTMLFormElement;
+				if (!form) return;
+				const formData = new FormData(form);
+				try {
+					const response = await fetch('/', {
+						method: 'POST',
+						body: formData,
+						headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+					});
+					if (response.ok) {
+						form.style.display = 'none';
+						const successMsg = document.getElementById('success-message') as HTMLElement;
+						if (successMsg) successMsg.style.display = 'block';
+					} else {
+						alert('Något gick fel. Försök igen.');
+					}
+				} catch (error) {
+					alert('Något gick fel. Försök igen.');
+				}
+			});
+		</script>
 
 	</body>
 </html>
