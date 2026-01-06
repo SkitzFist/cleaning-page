@@ -65,13 +65,11 @@ header::after {
 
 header h1 {
   margin: 0;
-  font-size: 7.8rem;
-  font-weight: 800;
-  background: var(--primary-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  letter-spacing: -0.025em;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--text-color);
+  font-family: 'Comic Sans MS', cursive;
+  letter-spacing: 0;
 }
 
 main {
@@ -241,9 +239,10 @@ form {
   border-radius: 1rem;
   box-shadow: var(--shadow);
   max-width: 500px;
-  margin: 0 auto;
+  margin: 2rem auto 0;
   position: relative;
   overflow: hidden;
+  border-top: 4px solid var(--border-color);
 }
 
 form::before {
