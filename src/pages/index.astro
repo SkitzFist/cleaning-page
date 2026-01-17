@@ -1,8 +1,10 @@
 ---
 import '../styles/global.css';
 import Nav from '../components/Nav.astro';
-import { serviceOptions } from '../data/services';
+import { serviceCards } from '../data/services';
 ---
+
+
 
 <html lang="sv">
 	<head>
@@ -24,9 +26,14 @@ import { serviceOptions } from '../data/services';
 			</section>
 			<section>
 				<h2>Våra tjänster</h2>
-				<ul>
-					{serviceOptions.map((service) => (
-						<li>{service.label}</li>
+				<ul class="services-list">
+					{serviceCards.map((service) => (
+						<li>
+							<strong>{service.label}</strong>
+							<span class="services-price">
+								{service.pricePerSqm > 0 ? `${service.pricePerSqm} kr/kvm` : 'Pris kommer'}
+							</span>
+						</li>
 					))}
 				</ul>
 			</section>

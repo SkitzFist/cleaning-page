@@ -15,3 +15,8 @@ export const serviceOptions: ServiceOption[] = [
 	{ value: 'trapphus', label: 'Trapphus', pricePerSqm: 0 },
 	{ value: 'övrigt', label: 'Övrigt', pricePerSqm: 0 }
 ];
+
+export const serviceCards = serviceOptions.map((service) => ({
+	...service,
+	priceLabel: service.pricePerSqm > 0 ? `${service.pricePerSqm} kr/kvm` : 'Pris kommer'
+}));

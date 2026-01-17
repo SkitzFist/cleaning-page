@@ -131,6 +131,19 @@ ul li {
   overflow: hidden;
 }
 
+.services-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.services-price {
+  margin-left: auto;
+  color: var(--muted-text);
+  font-weight: 600;
+}
+
 ul li::before {
   content: '';
   position: absolute;
