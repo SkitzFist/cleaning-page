@@ -13,8 +13,8 @@ export interface ServiceOption {
 }
 
 const repeatableFrequencyOptions: FrequencyOption[] = [
-	{ value: 'weekly', label: 'Varje vecka', multiplier: 4 },
-	{ value: 'biweekly', label: 'Varannan vecka', multiplier: 2 },
+	{ value: 'weekly', label: 'Varje vecka', multiplier: 1 },
+	{ value: 'biweekly', label: 'Varannan vecka', multiplier: 1 },
 	{ value: 'monthly', label: 'Varje månad', multiplier: 1 }
 ];
 

@@ -62,12 +62,14 @@ import { serviceOptions } from '../data/services';
 				<label for="info">Övrig info:</label>
 				<textarea id="info" name="info"></textarea>
 
+				<div class="price-estimate" aria-live="polite">
+					<p id="estimate-label">Beräknat pris</p>
+					<p id="estimate-value">Fyll i tjänst och kvm för pris</p>
+					<p class="estimate-note">Priset är en uppskattning och kan variera.</p>
+				</div>
+
 				<button type="submit">Skicka</button>
 			</form>
-			<div class="price-estimate" aria-live="polite">
-				<p id="estimate-label">Beräknat pris</p>
-				<p id="estimate-value">Fyll i tjänst och kvm för pris</p>
-			</div>
 			<div id="success-message" style="display: none; margin-top: 2rem; padding: 1rem; background: var(--card-bg); border-radius: 1rem; box-shadow: var(--shadow); text-align: center;">
 				<p>Tack för din beställning! Vi hör av oss inom en arbetsdag. Vid frågor var god att maila till <a href="mailto:kontakt@tjelvarstadservice.se">kontakt@tjelvarstadservice.se</a></p>
 			</div>
@@ -133,14 +135,15 @@ import { serviceOptions } from '../data/services';
 						(option) => option.value === frequencySelect?.value
 					);
 
-					estimateLabel.textContent = 'Beräknat pris per månad';
-
 					if (!frequencyOption) {
-						estimateValue.textContent = 'Välj frekvens för pris per månad';
+						estimateLabel.textContent = 'Beräknat pris';
+						estimateValue.textContent = 'Välj frekvens för pris';
 						return;
 					}
 
 					const estimate = selectedService.pricePerSqm * kvm * frequencyOption.multiplier;
+					const periodLabel = frequencyOption.value === 'monthly' ? 'månad' : 'vecka';
+					estimateLabel.textContent = `Beräknat pris per ${periodLabel}`;
 					estimateValue.textContent = `${estimate.toLocaleString('sv-SE')} kr`;
 					return;
 				}
