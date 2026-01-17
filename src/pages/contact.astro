@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import Nav from '../components/Nav.astro';
+import { serviceOptions } from '../data/services';
 ---
 <html lang="sv">
 	<head>
@@ -39,15 +40,9 @@ import Nav from '../components/Nav.astro';
 				<label for="service_type">Typ av tjänst:</label>
 				<select id="service_type" name="service_type" required>
 					<option value="">Välj tjänst</option>
-					<option value="hem">Hem</option>
-					<option value="flytt">Flytt</option>
-					<option value="dödsbo">Dödsbo</option>
-					<option value="bygg">Bygg</option>
-					<option value="storstäd">Storstäd</option>
-					<option value="fönsterputs">Fönsterputs</option>
-					<option value="kontor">Kontor</option>
-					<option value="trapphus">Trapphus</option>
-					<option value="övrigt">Övrigt</option>
+					{serviceOptions.map((service) => (
+						<option value={service.value}>{service.label}</option>
+					))}
 				</select>
 
 				<label for="rooms">Antal rum:</label>

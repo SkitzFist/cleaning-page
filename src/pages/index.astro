@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import Nav from '../components/Nav.astro';
+import { serviceOptions } from '../data/services';
 ---
 
 <html lang="sv">
@@ -24,10 +25,9 @@ import Nav from '../components/Nav.astro';
 			<section>
 				<h2>Våra tjänster</h2>
 				<ul>
-					<li>Hemstädning</li>
-					<li>Kontorsstädning</li>
-					<li>Fönsterputsning</li>
-					<li>Storstädning</li>
+					{serviceOptions.map((service) => (
+						<li>{service.label}</li>
+					))}
 				</ul>
 			</section>
 			<div class="cta">
