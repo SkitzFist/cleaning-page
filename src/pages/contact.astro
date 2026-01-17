@@ -59,14 +59,47 @@ import { serviceOptions } from '../data/services';
 
 				<button type="submit">Skicka</button>
 			</form>
+			<div class="price-estimate" aria-live="polite">
+				<p>Beräknat pris</p>
+				<p id="estimate-value">Fyll i tjänst och kvm för pris</p>
+			</div>
 			<div id="success-message" style="display: none; margin-top: 2rem; padding: 1rem; background: var(--card-bg); border-radius: 1rem; box-shadow: var(--shadow); text-align: center;">
 				<p>Tack för din beställning! Vi hör av oss inom en arbetsdag. Vid frågor var god att maila till <a href="mailto:kontakt@tjelvarstadservice.se">kontakt@tjelvarstadservice.se</a></p>
 			</div>
 		</main>
-		<script>
+		<script define:vars={{ serviceOptions }}>
+			const serviceMap = new Map(serviceOptions.map((service) => [service.value, service]));
+			const serviceSelect = document.getElementById('service_type');
+			const kvmInput = document.getElementById('kvm');
+			const estimateValue = document.getElementById('estimate-value');
+
+			const updateEstimate = () => {
+				if (!serviceSelect || !kvmInput || !estimateValue) return;
+
+				const selectedService = serviceMap.get(serviceSelect.value);
+				const kvm = Number(kvmInput.value);
+
+				if (!selectedService || Number.isNaN(kvm) || kvm <= 0) {
+					estimateValue.textContent = 'Fyll i tjänst och kvm för pris';
+					return;
+				}
+
+				if (selectedService.pricePerSqm <= 0) {
+					estimateValue.textContent = 'Pris saknas för vald tjänst';
+					return;
+				}
+
+				const estimate = selectedService.pricePerSqm * kvm;
+				estimateValue.textContent = `${estimate.toLocaleString('sv-SE')} kr`;
+			};
+
+			serviceSelect?.addEventListener('change', updateEstimate);
+			kvmInput?.addEventListener('input', updateEstimate);
+			updateEstimate();
+
 			document.querySelector('form')?.addEventListener('submit', async (e) => {
 				e.preventDefault();
-				const form = e.target as HTMLFormElement;
+				const form = e.target instanceof HTMLFormElement ? e.target : null;
 				if (!form) return;
 				const formData = new FormData(form);
 				try {
@@ -77,7 +110,7 @@ import { serviceOptions } from '../data/services';
 					});
 					if (response.ok) {
 						form.style.display = 'none';
-						const successMsg = document.getElementById('success-message') as HTMLElement;
+						const successMsg = document.getElementById('success-message');
 						if (successMsg) successMsg.style.display = 'block';
 					} else {
 						alert('Något gick fel. Försök igen.');
@@ -90,6 +123,15 @@ import { serviceOptions } from '../data/services';
 		<style>
 			form > label:not(:first-of-type) {
 				margin-top: 1rem;
+			}
+
+			.price-estimate {
+				margin-top: 2rem;
+				padding: 1rem;
+				background: var(--card-bg);
+				border-radius: 1rem;
+				box-shadow: var(--shadow);
+				text-align: center;
 			}
 		</style>
 	</body>

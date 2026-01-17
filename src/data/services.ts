@@ -1,16 +1,17 @@
 export interface ServiceOption {
 	value: string;
 	label: string;
+	pricePerSqm: number;
 }
 
 export const serviceOptions: ServiceOption[] = [
-	{ value: 'hem', label: 'Hem' },
-	{ value: 'flytt', label: 'Flytt' },
-	{ value: 'dödsbo', label: 'Dödsbo' },
-	{ value: 'bygg', label: 'Bygg' },
-	{ value: 'storstäd', label: 'Storstäd' },
-	{ value: 'fönsterputs', label: 'Fönsterputs' },
-	{ value: 'kontor', label: 'Kontor' },
-	{ value: 'trapphus', label: 'Trapphus' },
-	{ value: 'övrigt', label: 'Övrigt' }
+	{ value: 'hem', label: 'Hem', pricePerSqm: 0 },
+	{ value: 'flytt', label: 'Flytt', pricePerSqm: 0 },
+	{ value: 'dödsbo', label: 'Dödsbo', pricePerSqm: 0 },
+	{ value: 'bygg', label: 'Bygg', pricePerSqm: 0 },
+	{ value: 'storstäd', label: 'Storstäd', pricePerSqm: 0 },
+	{ value: 'fönsterputs', label: 'Fönsterputs', pricePerSqm: 0 },
+	{ value: 'kontor', label: 'Kontor', pricePerSqm: 0 },
+	{ value: 'trapphus', label: 'Trapphus', pricePerSqm: 0 },
+	{ value: 'övrigt', label: 'Övrigt', pricePerSqm: 0 }
 ];
