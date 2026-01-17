@@ -8,7 +8,7 @@ import Nav from '../components/Nav.astro';
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Beställ - Städfirma Sverige</title>
+		<title>Beställ - Tjelvar Hemservice</title>
 	</head>
 	<body>
 		<header>
@@ -16,9 +16,17 @@ import Nav from '../components/Nav.astro';
 		</header>
 		<main>
 			<Nav />
+
+			<!-- FORM -->
 			<form name="contact" method="POST" data-netlify="true">
 				<label for="name">Namn:</label>
 				<input type="text" id="name" name="name" required />
+
+				<label for="email">Email:</label>
+				<input type="email" id="email" name="email" required />
+
+				<label for="phone">Telefonnummer:</label>
+				<input type="tel" id="phone" name="phone" required />
 
 				<label>Typ av kund:</label>
 				<div class="radio-group">
@@ -27,9 +35,6 @@ import Nav from '../components/Nav.astro';
 					<input type="radio" id="business" name="customer_type" value="företag" />
 					<label for="business">Företag</label>
 				</div>
-
-				<label for="phone">Telefonnummer:</label>
-				<input type="tel" id="phone" name="phone" required />
 
 				<label for="service_type">Typ av tjänst:</label>
 				<select id="service_type" name="service_type" required>
